@@ -1,0 +1,20 @@
+﻿@model IEnumerable<GameDev.Data.Model.Company> 
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <div>       
+        There are @Model.Count() company in the database
+    </div>
+
+    <ul>
+        @foreach(var Company in Model )//for every company do the following
+        {
+            <li>@Company.Name</li>
+        }
+    </ul>
+</div>
+
