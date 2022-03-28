@@ -10,9 +10,9 @@ namespace GameDev.Web.Controllers
     public class HomeController : Controller
     {   //to access the Inmemorycompanydata.cs component so that we can build model a/c to user request to transfer it to view for rendering
         ICompanyData db; //controller is going to access the database thru this interface
-        public HomeController() //to initialize above field
+        public HomeController(ICompanyData db) 
         {
-            db = new InMemoryCompanyData();
+            this.db = db;
         }
         public ActionResult Index()
         {
