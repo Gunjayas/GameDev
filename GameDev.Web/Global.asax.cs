@@ -8,6 +8,7 @@ using System.Web.Routing;
 using System.Web.Http;
 
 
+
 namespace GameDev.Web
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -16,9 +17,10 @@ namespace GameDev.Web
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            ContainerConfig.RegisterContainer();
+            ContainerConfig.RegisterContainer(GlobalConfiguration.Configuration);
         }
     }
 }

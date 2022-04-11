@@ -1,0 +1,19 @@
+﻿@model IEnumerable<GameDev.Data.Model.Company>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@foreach (var item in Model)
+ {
+    @Html.Partial("_CompanySummary", item)
+
+ }
+@section footer {
+    <div>This is a custom footer!</div>
+    }

@@ -19,10 +19,40 @@ namespace GameDev.Data.Services
 
             };
         }
+        public void Add(Company company)
+        {
+            companies.Add(company);
+            company.Id = companies.Max(r => r.Id) + 1 ;
+        }
+
+        public void Update(Company company)
+        {
+            var existing = Get(company.Id);
+            if (existing != null) 
+            {
+                existing.Name = company.Name;
+                existing.Genre = company.Genre;
+            }
+        }
+        public Company Get(int id)
+        {
+            return companies.FirstOrDefault(r => r.Id == id);
+        }
+        
+
         public IEnumerable<Company> GetAll()
         {   //orderby is list method or arraymethod
             return companies.OrderBy(r => r.Name);        //it's enumerable so it's gonna loop one by one 
             
+        }
+
+        public void Delete(int id)
+        {
+            var company = Get(id);
+            if (company != null)
+            {
+                companies.Remove(company);
+            }
         }
     }
 }
