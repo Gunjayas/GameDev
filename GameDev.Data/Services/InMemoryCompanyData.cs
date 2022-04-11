@@ -1,4 +1,4 @@
-﻿using GameDev.Data.Model;
+﻿/*using GameDev.Data.Model;
 using System; //It will perform services that simulate data access
 using System.Collections.Generic;
 using System.Linq;
@@ -56,3 +56,4 @@ namespace GameDev.Data.Services
         }
     }
 }
+*/
